@@ -6,10 +6,11 @@ const gasApi = axios.create({
   }
 })
 
-const apiUrl = localStorage.getItem('api_url')
+const apiUrl = localStorage.getItem('api_url') ? localStorage.getItem('api_url') : ''
 // const apiUrl = ''
 
 const fetch_func = (data) => {
+  if (apiUrl == '') return
   console.log(data)
   return fetch(apiUrl, {
     "method": "POST",
@@ -20,6 +21,7 @@ const fetch_func = (data) => {
 }
 
 const fetch_data = () => {
+  if (apiUrl == '') return
   return gasApi.get(apiUrl)
 }
 
