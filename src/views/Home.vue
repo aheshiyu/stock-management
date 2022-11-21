@@ -198,10 +198,12 @@ export default {
       this.loading = true
 
       const res = await this.$gas.fetch_data()
-      if (Array.isArray(res.data)) {
-        this.items = res.data
+      if (res) {
+        if (Array.isArray(res.data)) {
+          this.items = res.data
+        }
+        // console.log(this.items)
       }
-      // console.log(this.items)
 
       this.loading = false
     }
