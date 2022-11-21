@@ -104,7 +104,7 @@ import { VueLoading } from 'vue-loading-template'
 import draggable from 'vuedraggable'
 
 export default {
-  name: 'Home',
+  name: 'Memo',
 
   components: {
     draggable,
